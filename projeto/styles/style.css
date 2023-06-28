@@ -1,0 +1,13 @@
+body, html {
+    height: 100%;
+}
+.vertical-center {
+    min-height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.error-cadastro-aluno{
+    color: red;
+    font-size: 12px;
+}
