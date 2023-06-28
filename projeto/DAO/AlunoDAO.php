@@ -1,6 +1,6 @@
 <?php
 
-include_once '../Model/Postgres.php';
+include_once '../Model/Postgres.php';     
 include_once '../Model/Aluno.php';
 
 class AlunoDAO extends Aluno{
