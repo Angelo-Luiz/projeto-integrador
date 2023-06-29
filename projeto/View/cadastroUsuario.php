@@ -43,7 +43,7 @@ if($statusCadastro == 'success'){
             Cadastro de Usuarios
         </div>
         <div class="card-body">
-            <form method="post" action="../Controller/cadastroCidadeController.php" id="form">
+            <form method="post" action="../Controller/cadastroUsuarioController.php" id="form">
                 <div class="form-group">
                     <label for="nome">Nome Completo:</label>
                     <input type="text" class="form-control nome" id="nome" name="nome" placeholder="Nome Completo">
@@ -61,7 +61,7 @@ if($statusCadastro == 'success'){
                     <input type="date" class="form-control data" id="data" name="data">
                 </div>
                 <div class="form-group">
-                    <label for="usuario">Usuario para efetuar login no sistema:</label>
+                    <label for="usuario">Usuario:</label>
                     <input type="text" class="form-control usuario" id="usuario" name="usuario">
                 </div>
                 <div class="form-group">
@@ -86,6 +86,8 @@ if($statusCadastro == 'success'){
 </section>
 
 <script src="../JS/CadastroUsuario.js"></script>
+
+<?php include_once 'rodape.php'; ?>
 </body>
 </html>
 

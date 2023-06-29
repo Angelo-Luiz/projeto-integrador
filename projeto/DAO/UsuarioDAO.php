@@ -5,4 +5,8 @@ class UsuarioDAO{
     public function __construct(){
         parent::__contruct();
     }
+
+    public function createUsuario(){
+
+    }
 }
