@@ -17,7 +17,7 @@
             <form action="../Controller/loginController.php" method="post">
                 <div class="form-group">
                     <label for="email">Usuario:</label>
-                    <input type="text" class="form-control" id="email" name="email" placeholder="Digite seu usuario" required>
+                    <input type="text" class="form-control" id="email" name="login" placeholder="Digite seu usuario" required>
                 </div>
                 <div class="form-group">
                     <label for="senha">Senha:</label>

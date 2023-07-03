@@ -62,7 +62,7 @@ if($statusCadastro == 'success'){
                 </div>
                 <div class="form-group">
                     <label for="usuario">Usuario:</label>
-                    <input type="text" class="form-control usuario" id="usuario" name="usuario">
+                    <input type="text" class="form-control usuario" id="usuario" name="usuario" placeholder="Informe o Usuário">
                 </div>
                 <div class="form-group">
                     <label for="usuario">Selecione o tipo de usuario:</label>
@@ -76,7 +76,7 @@ if($statusCadastro == 'success'){
 
                 <div class="form-group">
                     <label for="senha">Senha:</label>
-                    <input type="password" class="form-control senha" id="senha" name="senha">
+                    <input type="password" class="form-control senha" id="senha" name="senha" placeholder="Informe a Senha">
                 </div>
 
                 <button type="submit" class="btn btn-primary botao">Enviar</button>

@@ -6,6 +6,7 @@ class Usuario{
     private $cpf;
     private $login;
     private $senha;
+    private $tipo;
 
     public function __construct($nome = null, $email = null, $dataNasc = null, $cpf = null, $login = null, $senha = null){
         $this->nome = $nome;
@@ -110,6 +111,22 @@ class Usuario{
     public function setSenha($senha)
     {
         $this->senha = $senha;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getTipo()
+    {
+        return $this->tipo;
+    }
+
+    /**
+     * @param mixed $tipo
+     */
+    public function setTipo($tipo)
+    {
+        $this->tipo = $tipo;
     }
 
 
