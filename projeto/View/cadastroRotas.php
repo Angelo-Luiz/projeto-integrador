@@ -92,7 +92,7 @@ if($statusCadastro == 'success'){
     </div>
 </section>
 
-<script src="../JS/CadastroUniversidade.js"></script>
+<script src="../JS/CadastroRotas.js"></script>
 </body>
 </html>
 

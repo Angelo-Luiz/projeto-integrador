@@ -85,7 +85,7 @@ if($statusCadastro == 'success'){
     </div>
 </section>
 
-<script src="../JS/CadastroUsuario.js"></script>
+<script src="../JS/CadastroVeiculo.js"></script>
 
 <?php include_once 'rodape.php'; ?>
 </body>
