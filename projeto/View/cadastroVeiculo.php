@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Cadastro de Funcionários</title>
+    <title>Cadastro de Veículos</title>
     <?php
     session_start();
     if(!$_SESSION['id_usuario'] || $_SESSION['id_usuario'] == ''){
@@ -31,7 +31,7 @@
 include_once 'topo.php';
 
 if($statusCadastro == 'success'){
-    echo "<script>alert('Funcionario cadastrada com sucesso')</script>";
+    echo "<script>alert('Veiculo cadastrada com sucesso')</script>";
 }else if($statusCadastro == 'error'){
     echo "<script>alert('Erro ao inserir registro.')</script>";
 }
@@ -40,47 +40,43 @@ if($statusCadastro == 'success'){
 <section class="container mt-5">
     <div class="card">
         <div class="card-header">
-            Cadastro de Funcionário
+            Cadastro de Veículo
         </div>
         <div class="card-body">
             <form method="post" action="../Controller/cadastroUsuarioController.php" id="form">
                 <div class="form-group">
-                    <label for="nome">Nome Completo:</label>
-                    <input type="text" class="form-control nome" id="nome" name="nome" placeholder="Nome Completo">
+                    <label for="nome">Placa:</label>
+                    <input type="text" class="form-control placa" id="placa" name="placa" placeholder="Digite a Placa">
                 </div>
                 <div class="form-group">
-                    <label for="cpf">CPF:</label>
-                    <input type="number" class="form-control cpf" id="cpf" name="cpf" placeholder="Digite o CPF">
+                    <label for="marca">Marca:</label>
+                    <input type="text" class="form-control marca" id="marca" name="marca" placeholder="Informe a Marca">
                 </div>
                 <div class="form-group">
-                    <label for="email">Email:</label>
-                    <input type="email" class="form-control email" id="email" name="email" placeholder="Digite o Email">
+                    <label for="modelo">Modelo:</label>
+                    <input type="text" class="form-control modelo" id="modelo" name="modelo" placeholder="Informe o Modelo">
                 </div>
                 <div class="form-group">
-                    <label for="endereco">Endereço:</label>
-                    <input type="text" class="form-control endereco" id="endereco" name="endereco" placeholder="Digite o Endereço">
+                    <label for="kilometragem">Kilometragem:</label>
+                    <input type="number" class="form-control km" id="km" name="km" placeholder="Informe a KM atual do veículo">
                 </div>
                 <div class="form-group">
-                    <label for="data">Data de Admissão:</label>
+                    <label for="data">Data de Aquisição:</label>
                     <input type="date" class="form-control data" id="data" name="data">
                 </div>
                 <div class="form-group">
-                    <label for="telefone">Telefone:</label>
-                    <input type="number" class="form-control telefone" id="telefone" name="telefone" placeholder="Informe o telefone">
+                    <label for="eixos">Quantidade de Eixos:</label>
+                    <input type="number" class="form-control eixos" id="eixos" name="eixos" placeholder="Informe o a quantidade de eixos">
                 </div>
                 <div class="form-group">
-                    <label for="usuario">Selecione o Cargo:</label>
-                    <select class="form-control cargo" id="cargo" name="cargo">
+                    <label for="categoria">Selecione a Categoria:</label>
+                    <select class="form-control categoria" id="categoria" name="categoria">
                         <option value="">Selecione</option>
-                        <option value="1">Motorista</option>
-                        <option value="2">Mecânico</option>
-                        <option value="3">Auxiliar Administrativo</option>
+                        <option value="1">Caminhão</option>
+                        <option value="2">Ônibus</option>
+                        <option value="3">Van</option>
+                        <option value="4">Carro</option>
                     </select>
-                </div>
-
-                <div class="form-group">
-                    <label for="salario">Salário:</label>
-                    <input type="number" class="form-control salario" id="salario" name="salario" placeholder="Informe a Salario">
                 </div>
 
                 <button type="submit" class="btn btn-primary botao">Enviar</button>

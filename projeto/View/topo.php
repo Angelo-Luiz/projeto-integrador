@@ -14,6 +14,9 @@
                     <a class="dropdown-item" href="cadastroUniversidade.php">Cadastro de Universidades</a>
                     <a class="dropdown-item" href="cadastroCidade.php">Cadastro de Cidades</a>
                     <a class="dropdown-item" href="cadastroUsuario.php">Cadastro de Usuarios</a>
+                    <a class="dropdown-item" href="cadastroFuncionario.php">Cadastro de Funcionarios</a>
+                    <a class="dropdown-item" href="cadastroVeiculo.php">Cadastro de Veiculos</a>
+                    <a class="dropdown-item" href="cadastroRotas.php">Cadastro de Rotas</a>
                 </div>
             </li>
             <li class="nav-item dropdown">
