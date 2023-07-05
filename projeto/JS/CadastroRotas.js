@@ -58,6 +58,11 @@ class CadastroRotas{
             }
         }
 
+        if(this.cidade.value === this.cidade2.value){
+            valid = false;
+            this.criaErro(this.cidade2, `Selecione duas cidades diferente para o trajeto.`)
+        }
+
         return valid;
     }
 }

@@ -9,7 +9,8 @@
     if(!$_SESSION['id_usuario'] || $_SESSION['id_usuario'] == ''){
         header('Location: login.php?erro=3');
     }
-    $statusCadastro = $_GET['cadastro'];
+    $statusCadastro = '';
+    isset($_GET['cadastro']) ? $statusCadastro = $_GET['cadastro'] : $statusCadastro = null;
     ?>
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">

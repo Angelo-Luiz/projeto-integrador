@@ -9,7 +9,8 @@
     if(!$_SESSION['id_usuario'] || $_SESSION['id_usuario'] == ''){
         header('Location: login.php?erro=3');
     }
-    $statusCadastro = $_GET['cadastro'];
+    $statusCadastro = '';
+    isset($_GET['cadastro']) ? $statusCadastro = $_GET['cadastro'] : $statusCadastro = null;
     ?>
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
@@ -31,7 +32,7 @@
 include_once 'topo.php';
 
 if($statusCadastro == 'success'){
-    echo "<script>alert('Funcionario cadastrada com sucesso')</script>";
+    echo "<script>alert('Funcionario cadastrado com sucesso')</script>";
 }else if($statusCadastro == 'error'){
     echo "<script>alert('Erro ao inserir registro.')</script>";
 }
@@ -43,7 +44,7 @@ if($statusCadastro == 'success'){
             Cadastro de Funcionário
         </div>
         <div class="card-body">
-            <form method="post" action="../Controller/cadastroUsuarioController.php" id="form">
+            <form method="post" action="../Controller/cadastroFuncionarioController.php" id="form">
                 <div class="form-group">
                     <label for="nome">Nome Completo:</label>
                     <input type="text" class="form-control nome" id="nome" name="nome" placeholder="Nome Completo">

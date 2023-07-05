@@ -69,9 +69,13 @@ class CadastroVeiculo{
                 }
             }
             else if(campo.classList.contains('eixos')){
-                if(campo.value <= 1 || campo.value.length === 0){
+                if(campo.value.length === 0){
                     valid = false;
                     this.criaErro(campo, `O campo ${label.substring(0, label.length - 1)} é obrigatório.`);
+                }
+                else if(campo.value <= 1){
+                    valid = false;
+                    this.criaErro(campo, `Preencha o campo ${label.substring(0, label.length - 1)} com um valor válido.`)
                 }
             }
             else if(campo.classList.contains('categoria')){

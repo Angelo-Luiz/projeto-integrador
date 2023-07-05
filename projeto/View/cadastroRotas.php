@@ -10,7 +10,8 @@
     if(!$_SESSION['id_usuario'] || $_SESSION['id_usuario'] == ''){
         header('Location: login.php?erro=3');
     }
-    $statusCadastro = $_GET['cadastro'];
+    $statusCadastro = '';
+    isset($_GET['cadastro']) ? $statusCadastro = $_GET['cadastro'] : $statusCadastro = null;
     $cidades = new CidadeDAO();
     $consulta = $cidades->readCidade();
     ?>
@@ -46,7 +47,7 @@ if($statusCadastro == 'success'){
             Cadastro de Rotas
         </div>
         <div class="card-body">
-            <form method="post" action="../Controller/cadastroUniversidadeController.php" id="form">
+            <form method="post" action="../Controller/cadastroRotaController.php" id="form">
                 <div class="form-group">
                     <label for="descricao">Descrição da Rota:</label>
                     <input type="text" class="form-control descricao" id="descricao" name="descricao" placeholder="Descrição da Rota">

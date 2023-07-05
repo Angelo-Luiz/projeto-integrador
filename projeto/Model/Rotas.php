@@ -4,6 +4,7 @@ class Rotas{
     private $cidadePartida;
     private $cidadeChegada;
     private $distancia;
+    private $descricao;
 
     public function __construct($partida = null, $chegada = null, $distancia = null){
         $this->cidadePartida = $partida;
@@ -25,6 +26,22 @@ class Rotas{
     public function setCidadePartida($cidadePartida)
     {
         $this->cidadePartida = $cidadePartida;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getDescricao()
+    {
+        return $this->descricao;
+    }
+
+    /**
+     * @param mixed $descricao
+     */
+    public function setDescricao($descricao)
+    {
+        $this->descricao = $descricao;
     }
 
     /**

@@ -10,7 +10,8 @@
     if(!$_SESSION['id_usuario'] || $_SESSION['id_usuario'] == ''){
         header('Location: login.php?erro=3');
     }
-    $statusCadastro = $_GET['cadastro'];
+    $statusCadastro = '';
+    isset($_GET['cadastro']) ? $statusCadastro = $_GET['cadastro'] : $statusCadastro = null;
     $uni = new UniversidadeDAO();
     $consulta = $uni->readUniversidade();
 

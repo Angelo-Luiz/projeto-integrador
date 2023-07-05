@@ -24,7 +24,7 @@
                     Relatórios
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                    <a class="dropdown-item" href="cadastroAluno.php">Relatório de Alunos</a>
+                    <a class="dropdown-item" href="relatorioAlunos.php">Relatório de Alunos</a>
                     <a class="dropdown-item" href="#">Relatório de Veículos</a>
                     <a class="dropdown-item" href="#">Relatório de Fretes</a>
                 </div>
