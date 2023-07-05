@@ -1,8 +1,32 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Filtros de Relatório</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <title>Relatório</title>
+    <?php
+    include_once '../DAO/UniversidadeDAO.php';
+    session_start();
+    if(!$_SESSION['id_usuario'] || $_SESSION['id_usuario'] == ''){
+        header('Location: login.php?erro=3');
+    }
+    $statusCadastro = '';
+    isset($_GET['cadastro']) ? $statusCadastro = $_GET['cadastro'] : $statusCadastro = null;
+
+
+    $uni = new UniversidadeDAO();
+    $facul = $uni->readUniversidade();
+    ?>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../styles/style.css">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+
+    <style>
+        body{
+            background-color: #D3D3D3;
+        }
+    </style>
 </head>
 <body>
 
@@ -28,12 +52,15 @@ include_once 'topo.php';
             </div>
         </div>
         <div class="form-group">
-            <label for="inputCategoria">Categoria</label>
+            <label for="inputCategoria">Universidade</label>
             <select class="form-control" id="inputCategoria">
                 <option value="">Selecione uma categoria</option>
-                <option value="categoria1">Categoria 1</option>
-                <option value="categoria2">Categoria 2</option>
-                <option value="categoria3">Categoria 3</option>
+                <?php
+                foreach ($facul as $row){
+                    echo "<option value'". $row['id'] . "'>". $row['nome'] . " - ". $row['sigla'] ."</option>";
+                }
+
+                ?>
             </select>
         </div>
         <div class="form-group">
