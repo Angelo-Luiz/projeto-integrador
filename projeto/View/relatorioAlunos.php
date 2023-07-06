@@ -14,6 +14,7 @@
 
     $uni = new UniversidadeDAO();
     $facul = $uni->readUniversidade();
+    $dias = $uni->readUniversidade("select * from dias_semana");
     ?>
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
@@ -26,6 +27,9 @@
         body{
             background-color: #D3D3D3;
         }
+        .botao{
+            width: 100%;
+        }
     </style>
 </head>
 <body>
@@ -37,48 +41,63 @@ include_once 'topo.php';
 <section class="container mt-5">
     <div class="card">
         <div class="card-header">
-            <h4>Relatório de Alunos</h4>
+            <h4>Relatório</h4>
     </div>
         <div class="card-body">
     <form>
         <div class="form-row">
             <div class="form-group col-md-6">
-                <label for="inputDataInicial">Data Inicial</label>
-                <input type="date" class="form-control" id="inputDataInicial" placeholder="Data Inicial">
+                <label for="data-inicial">Data Inicial</label>
+                <input type="date" class="form-control" id="data-inicial" placeholder="Data Inicial">
             </div>
             <div class="form-group col-md-6">
-                <label for="inputDataFinal">Data Final</label>
-                <input type="date" class="form-control" id="inputDataFinal" placeholder="Data Final">
+                <label for="data-final">Data Final</label>
+                <input type="date" class="form-control" id="data-final" placeholder="Data Final">
             </div>
         </div>
+
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                <label for="semestre">Semestre</label>
+                <select class="form-control" id="semestre">
+                    <option value="">Selecione um semestre</option>
+                    <option value="1">1º semestre</option>
+                    <option value="2">2º semestre</option>
+                </select>
+
+            </div>
+            <div class="form-group col-md-6">
+                <label for="dia">Dia</label>
+                <select class="form-control" id="dia">
+                    <option value="">Selecione algum dia</option>
+                    <?php
+                    foreach ($dias as $row){
+                        echo "<option value='". $row['id'] . "'>". $row['descricao'] . "</option>";
+                    }
+                    ?>
+                </select>
+
+            </div>
+        </div>
+
+
         <div class="form-group">
-            <label for="inputCategoria">Universidade</label>
-            <select class="form-control" id="inputCategoria">
-                <option value="">Selecione uma categoria</option>
+            <label for="universidade">Universidade</label>
+            <select class="form-control" id="universidade">
+                <option value="">Selecione uma universidade</option>
                 <?php
                 foreach ($facul as $row){
-                    echo "<option value'". $row['id'] . "'>". $row['nome'] . " - ". $row['sigla'] ."</option>";
+                    echo "<option value='". $row['id'] . "'>". $row['nome'] . " - ". $row['sigla'] ."</option>";
                 }
 
                 ?>
             </select>
         </div>
-        <div class="form-group">
-            <label for="inputStatus">Status</label>
-            <select class="form-control" id="inputStatus">
-                <option value="">Selecione um status</option>
-                <option value="status1">Status 1</option>
-                <option value="status2">Status 2</option>
-                <option value="status3">Status 3</option>
-            </select>
-        </div>
-        <button type="submit" class="btn btn-primary">Aplicar Filtros</button>
+        <button type="button" class="btn btn-success botao" id="botao">Consultar</button>
     </form>
         </div>
     </div>
 </section>
-
-<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.min.js"></script>
+<script src="../JS/RelatorioAluno.js"></script>
 </body>
 </html>
