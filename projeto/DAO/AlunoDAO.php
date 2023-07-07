@@ -57,8 +57,13 @@ class AlunoDAO extends Aluno{
             echo $e->getMessage();
         }
     }
-    public function readAluno(){
-
+    public function readAluno($query = "select * from aluno"){
+        $postgres = new Postgres('angelo', 'angelo', 'integrador');
+        $postgres->criaConexao();
+        $consulta = $postgres->getConexao()->query($query);
+        $consulta = $consulta->fetchAll();
+        $postgres->desconectar();
+        return $consulta;
     }
     public function updateAluno(){
 

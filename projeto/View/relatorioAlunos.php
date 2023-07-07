@@ -30,6 +30,14 @@
         .botao{
             width: 100%;
         }
+
+        .table-title {
+            text-align: center;
+        }
+
+        .table-hidden {
+            display: none;
+        }
     </style>
 </head>
 <body>
@@ -44,7 +52,7 @@ include_once 'topo.php';
             <h4>Relatório</h4>
     </div>
         <div class="card-body">
-    <form>
+    <form id="form">
         <div class="form-row">
             <div class="form-group col-md-6">
                 <label for="data-inicial">Data Inicial</label>
@@ -98,6 +106,62 @@ include_once 'topo.php';
         </div>
     </div>
 </section>
+
+<div class="container mt-4">
+    <div class="card">
+        <div class="card-header">
+            <h5 class="card-title table-title">Relatório de Alunos</h5>
+        </div>
+        <div class="card-body">
+            <table class="table ">
+                <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Nome</th>
+                    <th>Cpf</th>
+                    <th>Email</th>
+                    <th>Telefone</th>
+                    <th>Data de Nascimento</th>
+                    <th>Editar</th>
+                    <th>Deletar</th>
+
+                </tr>
+                </thead>
+                <tbody id="tbody-aluno">
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<!-- Button trigger modal -->
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalLong">
+    Launch demo modal
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                ...
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Save changes</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
 <script src="../JS/RelatorioAluno.js"></script>
 </body>
 </html>
