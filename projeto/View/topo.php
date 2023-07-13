@@ -28,9 +28,11 @@
                     <a class="dropdown-item" href="#">Relatório de Veículos</a>
                     <a class="dropdown-item" href="#">Relatório de Fretes</a>
                 </div>
+
+
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">Sobre</a>
+                <a class="nav-link" href="alterarCadastro.php">Editar/Deletar Cadastros</a>
             </li>
         </ul>
     </div>

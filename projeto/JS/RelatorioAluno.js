@@ -8,7 +8,7 @@ class RelatorioAluno{
         this.botao = document.querySelector('#botao');
         this.form = document.querySelector('#form');
         this.tabela = document.querySelector('#tbody-aluno');
-        this.modal = document.querySelector('#modal-editar');
+
 
        if(this.validaCampos()) { this.requisicao(); }
     }
@@ -45,7 +45,7 @@ class RelatorioAluno{
                 dataFinal: this.dataFinal.value,
                 semestre: this.semestre.value,
                 dia: this.dia.value,
-                universidade: this.universidade.value,
+                universidade: this.universidade.value
             };
 
             const url = 'http://localhost:8090/integrador/projeto/Controller/relatorioAlunosController.php';
@@ -58,7 +58,7 @@ class RelatorioAluno{
                 body: JSON.stringify(data)
             }).then(response => response.json())
                 .then(result => {
-                    // console.log(result)
+                    console.log(result)
                     this.montaTabela(result);
                 })
                 .catch(errpr => {
@@ -78,8 +78,6 @@ class RelatorioAluno{
             let tdEmail = document.createElement('td');
             let tdTelefone = document.createElement('td');
             let tdData = document.createElement('td');
-            let tdEditar = document.createElement('td');
-            let tdDeletar = document.createElement('td');
 
             tdId.innerText = i.id;
             tr.appendChild(tdId);
@@ -93,34 +91,12 @@ class RelatorioAluno{
             tr.appendChild(tdTelefone);
             tdData.innerText = i.data_nascimento;
             tr.appendChild(tdData);
-            tdEditar.appendChild(this.criaBotaoEditar());
-            tr.appendChild(tdEditar);
-            tdDeletar.appendChild(this.criaBotaoDeletar());
-            tr.appendChild(tdDeletar);
+
             this.tabela.appendChild(tr);
         }
 
     }
 
-    exibeModal(){
-        this.modal.style.display = 'block';
-    }
-
-    criaBotaoEditar(){
-        let botao = document.createElement('button');
-        botao.innerText = 'Editar';
-        botao.setAttribute('class', 'btn btn-primary');
-        botao.id = 'botao-editar';
-        botao.onclick = this.exibeModal();
-        return botao;
-    }
-
-    criaBotaoDeletar(){
-        let botao = document.createElement('button');
-        botao.innerText = 'Deletar';
-        botao.setAttribute('class', 'btn btn-danger');
-        return botao;
-    }
 }
 
 let relatorio = new RelatorioAluno();
