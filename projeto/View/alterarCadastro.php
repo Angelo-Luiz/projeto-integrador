@@ -61,8 +61,8 @@ if($statusCadastro == 'success'){
             </div>
 
                 <div class="form-group col-md-6">
-                    <label for="operacao">Formulário</label>
-                    <select class="form-control uf" id="operacao" name="operacao">
+                    <label for="formulario">Formulário</label>
+                    <select class="form-control formulario" id="formulario" name="formulario">
                         <option value="">Selecione o Formulário</option>
                         <option value="1">Aluno</option>
                         <option value="2">Cidade</option>
@@ -79,6 +79,8 @@ if($statusCadastro == 'success'){
     </div>
 </section>
 
+
+<script src="../JS/EditarCadastro.js"></script>
 </body>
 </html>
 
