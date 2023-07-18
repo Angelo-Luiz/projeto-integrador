@@ -10,7 +10,7 @@ class UsuarioDAO extends Usuario{
         try{
             $postgres = new Postgres('angelo', 'angelo', 'integrador');
             $postgres->criaConexao();
-            $sql = "insert into usuarios(senha, email, tipo_usuario, dataNasc, nomecompleto, cpf, login) values ('";
+            $sql = "insert into usuario(senha, email, tipo_usuario, dataNasc, nomecompleto, cpf, login) values ('";
             $sql .= $this->getSenha() . "', '";
             $sql .= $this->getEmail() . "', '";
             $sql .= $this->getTipo() . "', '";

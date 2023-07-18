@@ -12,7 +12,7 @@ if(!$conn){
 $login = $postgres->getConexao()->quote($_POST['login']);
 $senha = $postgres->getConexao()->quote($_POST['senha']);
 
-$query = "select * from usuarios where login = ". $login ." and senha = " . $senha ;
+$query = "select * from usuario where login = ". $login ." and senha = " . $senha ;
 
 $consulta = $conn->query($query);
 $consulta = $consulta->fetchAll();

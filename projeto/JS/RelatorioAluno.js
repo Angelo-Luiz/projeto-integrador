@@ -48,7 +48,7 @@ class RelatorioAluno{
                 universidade: this.universidade.value
             };
 
-            const url = 'http://localhost:8090/integrador/projeto/Controller/relatorioAlunosController.php';
+            const url = 'http://localhost:8090/integrador/projeto-integrador/projeto/Controller/relatorioAlunosController.php';
 
             fetch(url, {
                 method: 'POST',

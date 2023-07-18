@@ -11,7 +11,7 @@ class UniversidadeDAO extends Universidade{
         try {
             $postgres = new Postgres('angelo', 'angelo', 'integrador');
             $postgres->criaConexao();
-            $sql = "insert into universidades (nome, sigla, cidade) values ('" . $this->getNome() . "', '";
+            $sql = "insert into universidade (nome, sigla, cidade) values ('" . $this->getNome() . "', '";
             $sql .= $this->getSigla() . "', " . $this->getCidade() . ")";
             $insert = $postgres->getConexao()->prepare($sql);
 
@@ -32,7 +32,7 @@ class UniversidadeDAO extends Universidade{
     }
 
 
-    public function readUniversidade($query = "select * from universidades"){
+    public function readUniversidade($query = "select * from universidade"){
         $postgres = new Postgres('angelo', 'angelo', 'integrador');
         $postgres->criaConexao();
         $consulta = $postgres->getConexao()->query($query);

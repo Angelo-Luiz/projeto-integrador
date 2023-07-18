@@ -91,4 +91,19 @@ else if(empty($input['dataInicial']) && empty($input['dataFinal']) && !empty($in
 
 }
 
+//dia
+else if(empty($input['dataInicial']) && empty($input['dataFinal']) && !empty($input['dia']) && empty($input['semestre']) && empty($input['universidade'])){
+
+    $QUERY = "select a.id, a.nome_completo, a.cpf, a.telefone, a.email, a.data_nascimento from aluno a";
+    $QUERY .= " left join frequencia_aluno freq on a.id = freq.id_aluno";
+    $QUERY .= " where freq.id_dia = " . $input['dia'];
+
+    $consulta = $aluno->readAluno($QUERY);
+
+    echo json_encode($consulta);
+
+}
+else{
+    echo json_encode(Array(Array('message' => 'consulta inválida')));
+}
 

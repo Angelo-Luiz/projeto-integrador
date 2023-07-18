@@ -47,7 +47,7 @@ if($statusCadastro == 'success'){
 <section class="container mt-5">
     <div class="card">
         <div class="card-header">
-            Alterar Cadastro
+            <h3>Alterar Cadastro</h3>
         </div>
         <div class="card-body">
             <div class="form-row">
@@ -74,6 +74,26 @@ if($statusCadastro == 'success'){
                     </select>
                 </div>
 
+            </div>
+
+            <button class="btn btn-primary" id="carregar-formulario">Carregar</button>
+        </div>
+    </div>
+</section>
+
+<section class="container mt-5 campo-escondido" id="section-form">
+    <div class="card">
+        <div class="card-header" id="cabecalho">
+
+        </div>
+        <div class="card-body">
+            <div class="form-row">
+                <div class="col-md-8" id="corpo">
+
+                </div>
+                <div class="form-group col-md-4" style="width: 100%;">
+                    <button type="button" class="btn btn-danger" id="btn-deletar">Deletar</button>
+                </div>
             </div>
         </div>
     </div>

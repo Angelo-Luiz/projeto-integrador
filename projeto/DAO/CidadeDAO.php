@@ -12,7 +12,7 @@ class CidadeDAO extends Cidade{
         try{
             $postgres = new Postgres('angelo', 'angelo', 'integrador');
             $postgres->criaConexao();
-            $query = "insert into cidades (nome, uf, cep) values ('". $this->getNome() ."', '". $this->getUf() ."', ";
+            $query = "insert into cidade (nome, uf, cep) values ('". $this->getNome() ."', '". $this->getUf() ."', ";
             $query .= "'". $this->getCep() . "')";
 
             $insert = $postgres->getConexao()->prepare($query);
@@ -28,7 +28,7 @@ class CidadeDAO extends Cidade{
         }
     }
 
-    public function readCidade($sql = "select * from cidades"){
+    public function readCidade($sql = "select * from cidade"){
         $postgres = new Postgres('angelo', 'angelo', 'integrador');
         $postgres->criaConexao();
         $consulta = $postgres->getConexao()->query($sql);
